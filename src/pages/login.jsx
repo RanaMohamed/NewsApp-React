@@ -1,6 +1,11 @@
 import React from 'react';
+import { useState } from 'react';
+import LoginForm from '../components/loginForm';
+import SignupForm from '../components/signupForm';
 
 const Login = () => {
+	const [isLogin, setIsLogin] = useState(true);
+
 	return (
 		<React.Fragment>
 			<div className='login container'>
@@ -8,28 +13,23 @@ const Login = () => {
 					<img src='../imgs/news_presenter.svg' alt='' />
 				</div>
 				<div className='login__form'>
-					<h1 className='subtitle'>Login</h1>
-					<form action=''>
-						<label htmlFor='Email' className='label'>
-							Email
-						</label>
-						<input
-							className='input'
-							type='text'
-							id='Email'
-							placeholder='Email'
-						/>
-						<label htmlFor='Password' className='label'>
-							Password
-						</label>
-						<input
-							className='input'
-							type='text'
-							id='Password'
-							placeholder='Password'
-						/>
-						<input type='submit' className='btn' value='Login' />
-					</form>
+					<div className='tabs'>
+						<h1
+							className={'tab subtitle' + (isLogin ? ' tab--active' : '')}
+							onClick={() => setIsLogin(true)}
+						>
+							Login
+						</h1>
+						<h1
+							className={'tab subtitle' + (!isLogin ? ' tab--active' : '')}
+							onClick={() => setIsLogin(false)}
+						>
+							Signup
+						</h1>
+					</div>
+					<div className='tabs-body'>
+						{isLogin ? <LoginForm /> : <SignupForm />}
+					</div>
 				</div>
 			</div>
 		</React.Fragment>

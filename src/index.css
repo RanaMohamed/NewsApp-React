@@ -56,6 +56,31 @@ body {
 	font-size: 1.6rem;
 }
 
+.tabs {
+	display: flex;
+}
+
+.tabs .tab {
+	flex: 1;
+	text-align: center;
+	border-radius: 2rem 2rem 0 0;
+	padding: 2rem 0;
+	background-color: #f5f5f5;
+	margin-bottom: 0;
+}
+
+.tabs .tab.tab--active {
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px;
+	background-color: #ce3335;
+	color: #ffffff;
+}
+
+.tabs-body {
+	background-color: #f5f5f5;
+	border-radius: 0 0 1rem 1rem;
+	padding: 3rem;
+}
+
 .header {
 	color: #ffffff;
 	background-color: #ce3335;
@@ -79,14 +104,12 @@ body {
 }
 
 .login .login__img {
-	width: 35%;
+	width: 50rem;
+	margin-right: 10rem;
 }
 
 .login .login__form {
-	border-radius: 1rem;
-	padding: 1rem;
-	background-color: #f5f5f5;
-	box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px;
+	flex: 1;
 }
 
 .posts {
