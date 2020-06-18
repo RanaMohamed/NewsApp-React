@@ -1,21 +1,41 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext } from '../App';
 
 const Header = () => {
+	const userContext = useContext(UserContext);
+
+	const logout = () => {
+		localStorage.removeItem('token');
+		userContext.setUser(null);
+	};
+
 	return (
 		<div className='header'>
 			<div className='container'>
 				<div className='logo'>NEWS.</div>
 				<div className='nav'>
-					<Link className='nav-link' to='home'>
-						Home
-					</Link>
-					<Link className='nav-link' to='sources'>
-						Sources
-					</Link>
-					<Link className='nav-link' to='login'>
-						Login
-					</Link>
+					{userContext.user ? (
+						<React.Fragment>
+							<Link className='nav-link' to='home'>
+								Home
+							</Link>
+							<Link className='nav-link' to='sources'>
+								Sources
+							</Link>
+							<span className='nav-link'>
+								Welcome back {userContext.user?.fullname}
+							</span>
+							<span className='nav-link' onClick={logout}>
+								Logout
+							</span>
+						</React.Fragment>
+					) : (
+						<Link className='nav-link' to='login'>
+							Login
+						</Link>
+					)}
 				</div>
 			</div>
 		</div>

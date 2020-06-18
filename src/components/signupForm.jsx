@@ -21,7 +21,7 @@ const SignupForm = () => {
 			</label>
 			<input
 				className='input'
-				type='text'
+				type='password'
 				id='Password'
 				placeholder='Password'
 			/>

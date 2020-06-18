@@ -3,7 +3,7 @@ import { useState } from 'react';
 import LoginForm from '../components/loginForm';
 import SignupForm from '../components/signupForm';
 
-const Login = () => {
+const Login = (props) => {
 	const [isLogin, setIsLogin] = useState(true);
 
 	return (
