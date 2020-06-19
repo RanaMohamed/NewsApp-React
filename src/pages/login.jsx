@@ -9,9 +9,7 @@ const Login = (props) => {
 	return (
 		<React.Fragment>
 			<div className='login container'>
-				<div className='login__img'>
-					<img src='../imgs/news_presenter.svg' alt='' />
-				</div>
+				<div className='login__img'></div>
 				<div className='login__form'>
 					<div className='tabs'>
 						<h1

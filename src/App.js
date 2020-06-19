@@ -25,10 +25,22 @@ function App() {
 			sources: user.sources.filter((src) => src !== source),
 		}));
 	};
-
+	const setLoggedUser = (data) => {
+		if (!data) {
+			setUser(null);
+			localStorage.removeItem('token');
+			delete axios.defaults.headers.common['authorization'];
+			return;
+		}
+		setUser(data.user);
+		localStorage.setItem('token', data.token);
+		axios.defaults.headers.common['authorization'] = data.token;
+	};
 	return (
 		<div className='App'>
-			<UserContext.Provider value={{ user, setUser, subscribe, unsubscribe }}>
+			<UserContext.Provider
+				value={{ user, setUser, setLoggedUser, subscribe, unsubscribe }}
+			>
 				<Header></Header>
 				<Switch>
 					<Route path='/login' component={Login}></Route>

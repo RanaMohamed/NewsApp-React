@@ -27,8 +27,7 @@ const SignupForm = () => {
 
 		try {
 			const data = await axios.post('user/register', user);
-			userContext.setUser(data.user);
-			localStorage.setItem('token', data.token);
+			userContext.setLoggedUser(data);
 			history.replace('/');
 			return;
 		} catch (errors) {

@@ -6,11 +6,6 @@ import { UserContext } from '../App';
 const Header = () => {
 	const userContext = useContext(UserContext);
 
-	const logout = () => {
-		localStorage.removeItem('token');
-		userContext.setUser(null);
-	};
-
 	return (
 		<div className='header'>
 			<div className='container'>
@@ -27,7 +22,10 @@ const Header = () => {
 							<span className='nav-link'>
 								Welcome back {userContext.user?.fullname}
 							</span>
-							<span className='nav-link' onClick={logout}>
+							<span
+								className='nav-link'
+								onClick={() => userContext.setLoggedUser()}
+							>
 								Logout
 							</span>
 						</React.Fragment>

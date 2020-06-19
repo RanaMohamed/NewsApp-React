@@ -29,8 +29,7 @@ const LoginForm = (props) => {
 
 		try {
 			const data = await axios.post('user/login', user);
-			userContext.setUser(data.user);
-			localStorage.setItem('token', data.token);
+			userContext.setLoggedUser(data);
 			history.replace('/');
 			return;
 		} catch (errors) {

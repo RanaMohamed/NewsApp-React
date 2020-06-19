@@ -34,7 +34,7 @@ const Source = ({ source, onSubscribeChange }) => {
 				disabled={isLoading}
 				onClick={subcribeChange}
 			>
-				{!isLoading && source.subscribed ? 'Unsubscribe' : 'Subscribe'}
+				{!isLoading && (source.subscribed ? 'Unsubscribe' : 'Subscribe')}
 			</button>
 		</div>
 	);
