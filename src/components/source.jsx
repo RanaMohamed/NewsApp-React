@@ -1,6 +1,23 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import axios from '../axios';
+import { UserContext } from '../App';
 
-const Source = ({ source }) => {
+const Source = ({ source, onSubscribeChange }) => {
+	const [isLoading, setIsLoading] = useState(false);
+
+	const userContext = useContext(UserContext);
+
+	const subcribeChange = async () => {
+		setIsLoading(true);
+		await axios.post(
+			`source/${source.subscribed ? 'unsubscribe' : 'subscribe'}/${source.id}`
+		);
+		source.subscribed
+			? userContext.unsubscribe(source.id)
+			: userContext.subscribe(source.id);
+		onSubscribeChange(source.id);
+		setIsLoading(false);
+	};
 	return (
 		<div className='post'>
 			<div className='post__text'>
@@ -10,10 +27,14 @@ const Source = ({ source }) => {
 			</div>
 			<button
 				className={
-					'btn btn-center' + (source.subscribed ? '' : ' btn--secondary')
+					'btn btn-center' +
+					(isLoading ? ' loading' : '') +
+					(source.subscribed ? '' : ' btn--secondary')
 				}
+				disabled={isLoading}
+				onClick={subcribeChange}
 			>
-				{source.subscribed ? 'Unsubscribe' : 'Subscribe'}
+				{!isLoading && source.subscribed ? 'Unsubscribe' : 'Subscribe'}
 			</button>
 		</div>
 	);

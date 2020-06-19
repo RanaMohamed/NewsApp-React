@@ -14,9 +14,20 @@ function App() {
 	useEffect(() => {
 		axios.get('user').then((data) => setUser(data.user));
 	}, []);
+
+	const subscribe = (source) => {
+		setUser((user) => ({ ...user, sources: user.sources.concat(source) }));
+	};
+	const unsubscribe = (source) => {
+		setUser((user) => ({
+			...user,
+			sources: user.sources.filter((src) => src !== source),
+		}));
+	};
+
 	return (
 		<div className='App'>
-			<UserContext.Provider value={{ user, setUser }}>
+			<UserContext.Provider value={{ user, setUser, subscribe, unsubscribe }}>
 				<Header></Header>
 				<Switch>
 					<Route path='/login' component={Login}></Route>
