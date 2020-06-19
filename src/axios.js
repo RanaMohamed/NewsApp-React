@@ -1,4 +1,5 @@
 import axios from 'axios';
+import toastr from './components/toastr';
 
 const instance = axios.create({ baseURL: process.env.REACT_APP_API_URL });
 
@@ -20,7 +21,14 @@ instance.interceptors.response.use(
 		return response.data;
 	},
 	function (error) {
-		return Promise.reject(error.response?.data);
+		toastr.error(
+			error.response?.data?.errors
+				? 'Check your data'
+				: error.response?.data?.message
+				? error.response.data.message
+				: error.message
+		);
+		return Promise.reject(error.response?.data || {});
 	}
 );
 

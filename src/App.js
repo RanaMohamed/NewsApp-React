@@ -12,7 +12,8 @@ export const UserContext = React.createContext();
 function App() {
 	const [user, setUser] = useState(null);
 	useEffect(() => {
-		axios.get('user').then((data) => setUser(data.user));
+		localStorage.getItem('token') &&
+			axios.get('user').then((data) => setUser(data.user));
 	}, []);
 
 	const subscribe = (source) => {

@@ -76,12 +76,13 @@ const SignupForm = () => {
 			/>
 			<span className='error-message'>{errors.password?.message}</span>
 
-			<input
+			<button
 				type='submit'
 				disabled={isLoading}
-				className='btn'
-				value={isLoading ? '...' : 'Signup'}
-			/>
+				className={'btn' + (isLoading ? ' loading' : '')}
+			>
+				{!isLoading && 'Login'}
+			</button>
 		</form>
 	);
 };

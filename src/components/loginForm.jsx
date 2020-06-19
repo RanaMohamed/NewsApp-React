@@ -64,12 +64,13 @@ const LoginForm = (props) => {
 				onChange={(e) => setUser({ ...user, password: e.target.value })}
 			/>
 			<span className='error-message'>{errors.password?.message}</span>
-			<input
+			<button
 				type='submit'
 				disabled={isLoading}
-				className='btn'
-				value={isLoading ? '...' : 'Login'}
-			/>
+				className={'btn' + (isLoading ? ' loading' : '')}
+			>
+				{!isLoading && 'Login'}
+			</button>
 		</form>
 	);
 };

@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
-import './reset.css';
-import './index.css';
+import './css/reset.css';
+import './css/index.css';
+import './css/toastr.min.css';
 
 import * as serviceWorker from './serviceWorker';
 
