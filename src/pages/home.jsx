@@ -7,6 +7,7 @@ import { UserContext } from '../App';
 
 const Home = () => {
 	const [posts, setPosts] = useState([]);
+	const [query, setQuery] = useState('');
 	const [page, setPage] = useState(1);
 	const [total, setTotal] = useState(0);
 	const [isLoading, setIsLoading] = useState(false);
@@ -16,13 +17,13 @@ const Home = () => {
 	useEffect(() => {
 		async function getPosts() {
 			setIsLoading(true);
-			const data = await axios.get(`news?page=${page}`);
+			const data = await axios.get(`news?page=${page}&q=${query}`);
 			setPosts((posts) => posts.concat(data.articles));
 			setTotal(data.totalResults);
 			setIsLoading(false);
 		}
 		userContext.user?.sources?.length > 0 && getPosts();
-	}, [page, userContext.user]);
+	}, [page, query, userContext.user]);
 
 	const loadMore = () => {
 		setPage((page) => page + 1);
@@ -33,7 +34,17 @@ const Home = () => {
 			<div className='search-row'>
 				<h1 className='title'>Latest News</h1>
 				<div className='input-icon'>
-					<input className='input' type='text' placeholder='Search' />
+					<input
+						className='input'
+						type='text'
+						placeholder='Search'
+						value={query}
+						onChange={(e) => {
+							setPosts([]);
+							setPage(1);
+							setQuery(e.target.value);
+						}}
+					/>
 					<i className='search icon'></i>
 				</div>
 			</div>
