@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import * as _ from 'lodash';
 import axios from '../axios';
-import { loginSchema } from '../helpers/schemas';
+import { loginSchema } from '../helpers/schemas.js';
 import { useContext } from 'react';
 import { UserContext } from '../App';
 import { useHistory } from 'react-router';

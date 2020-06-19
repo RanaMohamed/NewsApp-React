@@ -4,8 +4,8 @@ import Joi from '@hapi/joi';
 export const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 const fullname = Joi.string().required().messages({
-	'string.empty': 'Fullname should not be empty',
-	'any.required': `Fullname is required`,
+	'string.empty': 'Full Name should not be empty',
+	'any.required': `Full Name is required`,
 });
 
 const email = Joi.string().required().pattern(emailRegex).messages({

@@ -3,7 +3,7 @@ import { UserContext } from '../App';
 import { useHistory } from 'react-router';
 import * as _ from 'lodash';
 import axios from '../axios';
-import { signupSchema } from '../helpers/schemas';
+import { signupSchema } from '../helpers/schemas.js';
 
 const SignupForm = () => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -37,14 +37,14 @@ const SignupForm = () => {
 	};
 	return (
 		<form onSubmit={submitHandler}>
-			<label htmlFor='Fullname' className='label'>
-				Fullname
+			<label htmlFor='Full Name' className='label'>
+				Full Name
 			</label>
 			<input
 				className='input'
 				type='text'
 				id='Fullname'
-				placeholder='Fullname'
+				placeholder='Full Name'
 				value={user.fullname}
 				onChange={(e) => setUser({ ...user, fullname: e.target.value })}
 			/>
@@ -80,7 +80,7 @@ const SignupForm = () => {
 				disabled={isLoading}
 				className={'btn' + (isLoading ? ' loading' : '')}
 			>
-				{!isLoading && 'Login'}
+				{!isLoading && 'Signup'}
 			</button>
 		</form>
 	);

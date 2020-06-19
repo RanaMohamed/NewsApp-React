@@ -12,7 +12,9 @@ const Post = ({ post }) => {
 					{new Date(post.publishedAt).toLocaleString()}
 				</p>
 				<p className='subtitle'>{post.title}</p>
-				<p>{post.content?.replace(/\[\+.* chars\]/, '')}</p>
+				<p className='post__content'>
+					{post.content?.replace(/\[\+.* chars\]/, '')}
+				</p>
 			</div>
 			<div className='post__overlay'>
 				<a

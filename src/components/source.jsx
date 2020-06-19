@@ -19,7 +19,7 @@ const Source = ({ source, onSubscribeChange }) => {
 		setIsLoading(false);
 	};
 	return (
-		<div className='post'>
+		<div className='post post--justify'>
 			<div className='post__text'>
 				<p className='post__date'>{source.category}</p>
 				<p className='subtitle'>{source.name}</p>
