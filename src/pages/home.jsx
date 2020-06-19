@@ -30,7 +30,13 @@ const Home = () => {
 
 	return (
 		<div className='container'>
-			<h1 className='title'>Latest News</h1>
+			<div className='search-row'>
+				<h1 className='title'>Latest News</h1>
+				<div className='input-icon'>
+					<input className='input' type='text' placeholder='Search' />
+					<i className='search icon'></i>
+				</div>
+			</div>
 			{userContext.user?.sources?.length > 0 ? (
 				<React.Fragment>
 					<div className='posts'>
