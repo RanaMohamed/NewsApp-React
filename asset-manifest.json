@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/NewsApp-React/static/css/main.c1281671.chunk.css",
-    "main.js": "/NewsApp-React/static/js/main.7cb60fd9.chunk.js",
-    "main.js.map": "/NewsApp-React/static/js/main.7cb60fd9.chunk.js.map",
-    "runtime-main.js": "/NewsApp-React/static/js/runtime-main.67756fdb.js",
-    "runtime-main.js.map": "/NewsApp-React/static/js/runtime-main.67756fdb.js.map",
-    "static/js/2.d39e18be.chunk.js": "/NewsApp-React/static/js/2.d39e18be.chunk.js",
-    "static/js/2.d39e18be.chunk.js.map": "/NewsApp-React/static/js/2.d39e18be.chunk.js.map",
-    "index.html": "/NewsApp-React/index.html",
-    "precache-manifest.024e7d4dcdb334f4e16133319844229b.js": "/NewsApp-React/precache-manifest.024e7d4dcdb334f4e16133319844229b.js",
-    "service-worker.js": "/NewsApp-React/service-worker.js",
-    "static/css/main.c1281671.chunk.css.map": "/NewsApp-React/static/css/main.c1281671.chunk.css.map",
-    "static/js/2.d39e18be.chunk.js.LICENSE.txt": "/NewsApp-React/static/js/2.d39e18be.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/NewsApp-React/static/media/news_presenter.c1df5130.svg"
+    "main.css": "/news-app/static/css/main.e3e9e072.chunk.css",
+    "main.js": "/news-app/static/js/main.e5f89a7b.chunk.js",
+    "main.js.map": "/news-app/static/js/main.e5f89a7b.chunk.js.map",
+    "runtime-main.js": "/news-app/static/js/runtime-main.7d78981f.js",
+    "runtime-main.js.map": "/news-app/static/js/runtime-main.7d78981f.js.map",
+    "static/js/2.d39e18be.chunk.js": "/news-app/static/js/2.d39e18be.chunk.js",
+    "static/js/2.d39e18be.chunk.js.map": "/news-app/static/js/2.d39e18be.chunk.js.map",
+    "index.html": "/news-app/index.html",
+    "precache-manifest.cae7c57dcc3607e08cacc71112f6223b.js": "/news-app/precache-manifest.cae7c57dcc3607e08cacc71112f6223b.js",
+    "service-worker.js": "/news-app/service-worker.js",
+    "static/css/main.e3e9e072.chunk.css.map": "/news-app/static/css/main.e3e9e072.chunk.css.map",
+    "static/js/2.d39e18be.chunk.js.LICENSE.txt": "/news-app/static/js/2.d39e18be.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/news-app/static/media/news_presenter.c1df5130.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.67756fdb.js",
+    "static/js/runtime-main.7d78981f.js",
     "static/js/2.d39e18be.chunk.js",
-    "static/css/main.c1281671.chunk.css",
-    "static/js/main.7cb60fd9.chunk.js"
+    "static/css/main.e3e9e072.chunk.css",
+    "static/js/main.e5f89a7b.chunk.js"
   ]
 }
