@@ -13,7 +13,7 @@ import ScrollToTop from './components/scrollToTop';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<BrowserRouter>
+		<BrowserRouter basename='/news-app'>
 			<ScrollToTop />
 			<App />
 		</BrowserRouter>

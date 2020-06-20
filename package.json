@@ -2,7 +2,7 @@
 	"name": "news-app",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "http://RanaMohamed.github.io/NewsApp-React",
+	"homepage": "http://RanaMohamed.github.io/news-app",
 	"dependencies": {
 		"@hapi/joi": "^17.1.1",
 		"@testing-library/jest-dom": "^4.2.4",
