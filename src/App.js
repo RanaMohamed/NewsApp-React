@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router';
+import { Route, Switch, Redirect } from 'react-router';
 import Login from './pages/login';
 import Home from './pages/home';
 import Header from './components/header';
@@ -46,6 +46,7 @@ function App() {
 					<Route path='/login' component={Login}></Route>
 					<ProtectedRoute path='/sources' component={Sources}></ProtectedRoute>
 					<ProtectedRoute path='/' component={Home}></ProtectedRoute>
+					<Redirect to='/' />
 					{/* <Route path='/sources' component={Sources}></Route>
 				<Route path='/' component={Home}></Route> */}
 				</Switch>
